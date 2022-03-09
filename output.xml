@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.2 on darwin)" generated="20210823 10:51:09.768" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcases" source="/Users/mbhatiya/Desktop/RobotFramework/Testcases">
+<suite id="s1-s1" name="GET Request" source="/Users/mbhatiya/Desktop/RobotFramework/Testcases/GET_Request.robot">
+<test id="s1-s1-t1" name="Verify the List of Users">
+<kw name="Create Request with List Users API" library="Resource">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210823 10:51:10.166" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210823 10:51:10.165" endtime="20210823 10:51:10.166"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users?page=${pageNum}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210823 10:51:10.166" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:10.400" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210823 10:51:10.401" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Aug 2021 05:21:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5960', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=WxMKVQntVMuL02ykX0y4Rcf8mSUBycPYlCZKO0%2FuQvTxhO5n8R89uzfkIQVOj%2B7KcOCgZdKk0s5jCxqsGoS1Ac56vCKJliq9Bl%2BlDQDDjiXgraC5l7MHMaAvFOs%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6831e557f9cd32af-BLR', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20210823 10:51:10.401" level="INFO">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/urllib3/connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210823 10:51:10.401" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:10.166" endtime="20210823 10:51:10.401"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.165" endtime="20210823 10:51:10.401"/>
+</kw>
+<kw name="Verify the Response Code" library="Resource">
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users?page=${pageNum}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210823 10:51:10.402" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:10.472" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210823 10:51:10.473" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Aug 2021 05:21:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5960', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=lWt9Kq030JPNKXH0hLo7bzdiifbnmBYCDP7ygQbX8Wkzst2sNjaCYTB4v1iRZpn2ZYxlYOwg73Bbjx9SrA1a4PbovA%2FFH1GTln%2Fjnqjar3m1HdCnn0OxKrdJpoE%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6831e5587aa332af-BLR', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20210823 10:51:10.473" level="INFO">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/urllib3/connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210823 10:51:10.473" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:10.402" endtime="20210823 10:51:10.473"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210823 10:51:10.475" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210823 10:51:10.473" endtime="20210823 10:51:10.475"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210823 10:51:10.475" endtime="20210823 10:51:10.475"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.401" endtime="20210823 10:51:10.475"/>
+</kw>
+<kw name="Verify the Response Data List Users API" library="Resource">
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users?page=${pageNum}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210823 10:51:10.476" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:10.555" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210823 10:51:10.555" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Aug 2021 05:21:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5960', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PdyJVvaa43X9%2B0wpT4ZA0WDFlCGLVKH35a0rTI9qJHSbFmpbpqgliFgXvS9h57jkz8UniFuHMPVSXnAhxeC%2BvbmC09NZnFBCoX9tTa9PFv1g3jFJnm6DdA7aqYc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6831e558fb8732af-BLR', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20210823 10:51:10.556" level="INFO">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/urllib3/connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210823 10:51:10.556" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:10.476" endtime="20210823 10:51:10.556"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20210823 10:51:10.556" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20210823 10:51:10.557" level="INFO">To JSON using : content={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} </msg>
+<msg timestamp="20210823 10:51:10.557" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20210823 10:51:10.557" level="INFO">${json_object} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<status status="PASS" starttime="20210823 10:51:10.556" endtime="20210823 10:51:10.557"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>5</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.587" level="INFO">${id} = [7]</msg>
+<status status="PASS" starttime="20210823 10:51:10.558" endtime="20210823 10:51:10.587"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.587" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.587" endtime="20210823 10:51:10.588"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.630" level="INFO">${email} = ['michael.lawson@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:10.588" endtime="20210823 10:51:10.630"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.631" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.630" endtime="20210823 10:51:10.631"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.657" level="INFO">${first_name} = ['Michael']</msg>
+<status status="PASS" starttime="20210823 10:51:10.631" endtime="20210823 10:51:10.657"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.658" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.658" endtime="20210823 10:51:10.658"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.681" level="INFO">${last_name} = ['Lawson']</msg>
+<status status="PASS" starttime="20210823 10:51:10.658" endtime="20210823 10:51:10.681"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.682" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.681" endtime="20210823 10:51:10.682"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.557" endtime="20210823 10:51:10.682"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.704" level="INFO">${id} = [8]</msg>
+<status status="PASS" starttime="20210823 10:51:10.682" endtime="20210823 10:51:10.704"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.704" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.704" endtime="20210823 10:51:10.704"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.726" level="INFO">${email} = ['lindsay.ferguson@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:10.705" endtime="20210823 10:51:10.726"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.727" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.727" endtime="20210823 10:51:10.727"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.753" level="INFO">${first_name} = ['Lindsay']</msg>
+<status status="PASS" starttime="20210823 10:51:10.727" endtime="20210823 10:51:10.753"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.753" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.753" endtime="20210823 10:51:10.753"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.777" level="INFO">${last_name} = ['Ferguson']</msg>
+<status status="PASS" starttime="20210823 10:51:10.753" endtime="20210823 10:51:10.777"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.777" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.777" endtime="20210823 10:51:10.777"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.682" endtime="20210823 10:51:10.777"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.803" level="INFO">${id} = [9]</msg>
+<status status="PASS" starttime="20210823 10:51:10.778" endtime="20210823 10:51:10.803"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.804" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.803" endtime="20210823 10:51:10.804"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.824" level="INFO">${email} = ['tobias.funke@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:10.804" endtime="20210823 10:51:10.824"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.824" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.824" endtime="20210823 10:51:10.824"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.847" level="INFO">${first_name} = ['Tobias']</msg>
+<status status="PASS" starttime="20210823 10:51:10.824" endtime="20210823 10:51:10.847"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.848" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.847" endtime="20210823 10:51:10.848"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.867" level="INFO">${last_name} = ['Funke']</msg>
+<status status="PASS" starttime="20210823 10:51:10.848" endtime="20210823 10:51:10.867"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.867" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.867" endtime="20210823 10:51:10.868"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.778" endtime="20210823 10:51:10.868"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.891" level="INFO">${id} = [10]</msg>
+<status status="PASS" starttime="20210823 10:51:10.868" endtime="20210823 10:51:10.891"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.891" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.891" endtime="20210823 10:51:10.891"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.913" level="INFO">${email} = ['byron.fields@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:10.891" endtime="20210823 10:51:10.913"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.913" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.913" endtime="20210823 10:51:10.913"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.934" level="INFO">${first_name} = ['Byron']</msg>
+<status status="PASS" starttime="20210823 10:51:10.913" endtime="20210823 10:51:10.934"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.935" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.935" endtime="20210823 10:51:10.935"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.958" level="INFO">${last_name} = ['Fields']</msg>
+<status status="PASS" starttime="20210823 10:51:10.935" endtime="20210823 10:51:10.958"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.958" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.958" endtime="20210823 10:51:10.959"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.868" endtime="20210823 10:51:10.959"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:10.981" level="INFO">${id} = [11]</msg>
+<status status="PASS" starttime="20210823 10:51:10.959" endtime="20210823 10:51:10.981"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:10.981" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:10.981" endtime="20210823 10:51:10.981"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.005" level="INFO">${email} = ['george.edwards@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:10.982" endtime="20210823 10:51:11.005"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.005" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.005" endtime="20210823 10:51:11.006"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.027" level="INFO">${first_name} = ['George']</msg>
+<status status="PASS" starttime="20210823 10:51:11.006" endtime="20210823 10:51:11.027"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.027" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.027" endtime="20210823 10:51:11.027"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.053" level="INFO">${last_name} = ['Edwards']</msg>
+<status status="PASS" starttime="20210823 10:51:11.027" endtime="20210823 10:51:11.053"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.054" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.053" endtime="20210823 10:51:11.054"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:10.959" endtime="20210823 10:51:11.054"/>
+</iter>
+<status status="PASS" starttime="20210823 10:51:10.557" endtime="20210823 10:51:11.054"/>
+</for>
+<status status="PASS" starttime="20210823 10:51:10.476" endtime="20210823 10:51:11.054"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20210823 10:51:10.164" endtime="20210823 10:51:11.054"/>
+</test>
+<test id="s1-s1-t2" name="Verify the List of Users 2">
+<kw name="given create request with list users api" library="Resource">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210823 10:51:11.056" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210823 10:51:11.055" endtime="20210823 10:51:11.056"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users?page=${pageNum}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210823 10:51:11.056" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:11.325" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210823 10:51:11.325" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Aug 2021 05:21:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5961', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=FQOGsZALDdqpdrHfZSZ8GgZkFmBHJrDKN5QFvELWm2z%2BsX3Hx4TmVN8cRz9Di5Huxcir9AMk6m6dBgPyiGM2LiYAdDI%2BZLsnOnx4iDcsrxs6myhNm9nT2%2FJ2ChM%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6831e55dca621d31-BLR', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20210823 10:51:11.325" level="INFO">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/urllib3/connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210823 10:51:11.325" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:11.056" endtime="20210823 10:51:11.325"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.055" endtime="20210823 10:51:11.326"/>
+</kw>
+<kw name="when verify the response code" library="Resource">
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users?page=${pageNum}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210823 10:51:11.326" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:11.412" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210823 10:51:11.413" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Aug 2021 05:21:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5961', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=E%2FuGkucghi95r8UjFJndGYMJIaLGb%2FLFF%2BiSYuktgtgJlyN4Z5pOFPAO4wCJD%2BvN7SSChqt8%2F%2FvNyXqP3hIOYz%2FH4kNZNn8slJnNLEBkF22%2F3ljM1dmFaJ%2FOnGE%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6831e55e5b951d31-BLR', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20210823 10:51:11.413" level="INFO">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/urllib3/connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210823 10:51:11.414" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:11.326" endtime="20210823 10:51:11.414"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210823 10:51:11.416" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210823 10:51:11.415" endtime="20210823 10:51:11.416"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210823 10:51:11.416" endtime="20210823 10:51:11.416"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.326" endtime="20210823 10:51:11.416"/>
+</kw>
+<kw name="then verify the response data list users api" library="Resource">
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/api/users?page=${pageNum}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20210823 10:51:11.417" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:11.499" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210823 10:51:11.500" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 Aug 2021 05:21:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5961', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jfKAUL3%2Flnwk65nXi6iJavB%2BZr9RJ3UaoXA%2FY3AmrxkRekrF9CGTFgY%2FT5ZNbolwHv0lCExZmEF3FoXoxRtM42itGIR8rdke0IjIzwrAbgBf8gPa6fBZtL2hjMI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '6831e55eecda1d31-BLR', 'Content-Encoding': 'gzip', 'alt-svc': 'h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20210823 10:51:11.500" level="INFO">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/urllib3/connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host '127.0.0.1'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20210823 10:51:11.500" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:11.417" endtime="20210823 10:51:11.500"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20210823 10:51:11.500" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20210823 10:51:11.501" level="INFO">To JSON using : content={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} </msg>
+<msg timestamp="20210823 10:51:11.501" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20210823 10:51:11.502" level="INFO">${json_object} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<status status="PASS" starttime="20210823 10:51:11.500" endtime="20210823 10:51:11.502"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>5</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.532" level="INFO">${id} = [7]</msg>
+<status status="PASS" starttime="20210823 10:51:11.502" endtime="20210823 10:51:11.532"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.532" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.532" endtime="20210823 10:51:11.532"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.569" level="INFO">${email} = ['michael.lawson@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:11.532" endtime="20210823 10:51:11.569"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.570" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.569" endtime="20210823 10:51:11.570"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.604" level="INFO">${first_name} = ['Michael']</msg>
+<status status="PASS" starttime="20210823 10:51:11.570" endtime="20210823 10:51:11.604"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.605" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.604" endtime="20210823 10:51:11.605"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.630" level="INFO">${last_name} = ['Lawson']</msg>
+<status status="PASS" starttime="20210823 10:51:11.605" endtime="20210823 10:51:11.630"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.631" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.631" endtime="20210823 10:51:11.631"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.502" endtime="20210823 10:51:11.631"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.656" level="INFO">${id} = [8]</msg>
+<status status="PASS" starttime="20210823 10:51:11.631" endtime="20210823 10:51:11.657"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.657" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.657" endtime="20210823 10:51:11.657"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.678" level="INFO">${email} = ['lindsay.ferguson@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:11.657" endtime="20210823 10:51:11.678"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.679" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.678" endtime="20210823 10:51:11.679"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.702" level="INFO">${first_name} = ['Lindsay']</msg>
+<status status="PASS" starttime="20210823 10:51:11.679" endtime="20210823 10:51:11.702"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.702" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.702" endtime="20210823 10:51:11.702"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.726" level="INFO">${last_name} = ['Ferguson']</msg>
+<status status="PASS" starttime="20210823 10:51:11.703" endtime="20210823 10:51:11.726"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.726" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.726" endtime="20210823 10:51:11.726"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.631" endtime="20210823 10:51:11.726"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.748" level="INFO">${id} = [9]</msg>
+<status status="PASS" starttime="20210823 10:51:11.726" endtime="20210823 10:51:11.748"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.748" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.748" endtime="20210823 10:51:11.748"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.775" level="INFO">${email} = ['tobias.funke@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:11.748" endtime="20210823 10:51:11.775"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.775" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.775" endtime="20210823 10:51:11.775"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.806" level="INFO">${first_name} = ['Tobias']</msg>
+<status status="PASS" starttime="20210823 10:51:11.775" endtime="20210823 10:51:11.806"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.806" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.806" endtime="20210823 10:51:11.807"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.830" level="INFO">${last_name} = ['Funke']</msg>
+<status status="PASS" starttime="20210823 10:51:11.807" endtime="20210823 10:51:11.830"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.831" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.831" endtime="20210823 10:51:11.831"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.726" endtime="20210823 10:51:11.831"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.852" level="INFO">${id} = [10]</msg>
+<status status="PASS" starttime="20210823 10:51:11.831" endtime="20210823 10:51:11.852"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.852" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.852" endtime="20210823 10:51:11.852"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.875" level="INFO">${email} = ['byron.fields@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:11.852" endtime="20210823 10:51:11.875"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.876" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.875" endtime="20210823 10:51:11.876"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.910" level="INFO">${first_name} = ['Byron']</msg>
+<status status="PASS" starttime="20210823 10:51:11.876" endtime="20210823 10:51:11.910"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.911" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.910" endtime="20210823 10:51:11.911"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.933" level="INFO">${last_name} = ['Fields']</msg>
+<status status="PASS" starttime="20210823 10:51:11.911" endtime="20210823 10:51:11.933"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.933" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.933" endtime="20210823 10:51:11.933"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.831" endtime="20210823 10:51:11.933"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.955" level="INFO">${id} = [11]</msg>
+<status status="PASS" starttime="20210823 10:51:11.934" endtime="20210823 10:51:11.955"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${id}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.956" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.955" endtime="20210823 10:51:11.956"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${email}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:11.978" level="INFO">${email} = ['george.edwards@reqres.in']</msg>
+<status status="PASS" starttime="20210823 10:51:11.956" endtime="20210823 10:51:11.978"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${email}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:11.978" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:11.978" endtime="20210823 10:51:11.978"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${first_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:12.001" level="INFO">${first_name} = ['George']</msg>
+<status status="PASS" starttime="20210823 10:51:11.978" endtime="20210823 10:51:12.001"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${first_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:12.002" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:12.001" endtime="20210823 10:51:12.002"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${last_name}</var>
+<arg>${json_object}</arg>
+<arg>data[${i}].last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20210823 10:51:12.022" level="INFO">${last_name} = ['Edwards']</msg>
+<status status="PASS" starttime="20210823 10:51:12.002" endtime="20210823 10:51:12.022"/>
+</kw>
+<kw name="Element Should Exist" library="XML">
+<arg>${last_name}</arg>
+<doc>Verifies that one or more element match the given ``xpath``.</doc>
+<msg timestamp="20210823 10:51:12.022" level="INFO">1 element matched '.'.</msg>
+<status status="PASS" starttime="20210823 10:51:12.022" endtime="20210823 10:51:12.022"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:11.933" endtime="20210823 10:51:12.022"/>
+</iter>
+<status status="PASS" starttime="20210823 10:51:11.502" endtime="20210823 10:51:12.022"/>
+</for>
+<status status="PASS" starttime="20210823 10:51:11.417" endtime="20210823 10:51:12.022"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20210823 10:51:11.055" endtime="20210823 10:51:12.022"/>
+</test>
+<status status="PASS" starttime="20210823 10:51:09.794" endtime="20210823 10:51:12.023"/>
+</suite>
+<suite id="s1-s2" name="WebTest" source="/Users/mbhatiya/Desktop/RobotFramework/Testcases/WebTest.robot">
+<test id="s1-s2-t1" name="Simple Smoke Test">
+<kw name="Open Test Application" library="Webresource" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${ANDROID_AUTOMATION_HOST}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>app=/Users/mbhatiya/Desktop/RobotFramework/app.apk</arg>
+<arg>appPackage=${ANDROID_PACKAGE_NAME}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210823 10:51:12.148" endtime="20210823 10:51:18.077"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:12.147" endtime="20210823 10:51:18.077"/>
+</kw>
+<kw name="Navigate to the Onbaording Screen" library="Webresource">
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<status status="PASS" starttime="20210823 10:51:18.078" endtime="20210823 10:51:29.251"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>No, I want to open an account</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:29.670" level="INFO">'No, I want to open an account'.</msg>
+<msg timestamp="20210823 10:51:29.742" level="INFO">Clicking element 'No, I want to open an account'.</msg>
+<status status="PASS" starttime="20210823 10:51:29.251" endtime="20210823 10:51:29.858"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:18.077" endtime="20210823 10:51:29.858"/>
+</kw>
+<kw name="Verify the Eligibility Text" library="Webresource">
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${Checkbox}</arg>
+<arg>Yes, all statements above are true</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20210823 10:51:29.860" level="INFO">Verifying element '//android.widget.CheckBox' contains exactly text 'Yes, all statements above are true'.</msg>
+<status status="PASS" starttime="20210823 10:51:29.859" endtime="20210823 10:51:31.511"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Checkbox}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210823 10:51:31.513" level="INFO">Clicking element '//android.widget.CheckBox'.</msg>
+<status status="PASS" starttime="20210823 10:51:31.511" endtime="20210823 10:51:31.805"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>Continue</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:32.478" level="INFO">'Continue'.</msg>
+<msg timestamp="20210823 10:51:32.526" level="INFO">Clicking element 'Continue'.</msg>
+<status status="PASS" starttime="20210823 10:51:31.806" endtime="20210823 10:51:32.617"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:29.858" endtime="20210823 10:51:32.617"/>
+</kw>
+<kw name="Verify the Information Icon Details" library="Webresource">
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>id=termsConditionsText</arg>
+<arg>Terms</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210823 10:51:32.620" level="INFO">Verifying element 'id=termsConditionsText' contains text 'Terms'.</msg>
+<status status="PASS" starttime="20210823 10:51:32.617" endtime="20210823 10:51:33.831"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>I agree</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:33.882" level="INFO">'I agree'.</msg>
+<msg timestamp="20210823 10:51:33.909" level="INFO">Clicking element 'I agree'.</msg>
+<status status="PASS" starttime="20210823 10:51:33.832" endtime="20210823 10:51:33.953"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:32.617" endtime="20210823 10:51:33.953"/>
+</kw>
+<kw name="Navigate to Phone Number Screen" library="Webresource">
+<kw name="Click Button" library="AppiumLibrary">
+<arg>Get started</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:35.133" level="INFO">'Get started'.</msg>
+<msg timestamp="20210823 10:51:35.164" level="INFO">Clicking element 'Get started'.</msg>
+<status status="PASS" starttime="20210823 10:51:33.953" endtime="20210823 10:51:35.247"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${InputTextField}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210823 10:51:35.247" endtime="20210823 10:51:37.479"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:33.953" endtime="20210823 10:51:37.479"/>
+</kw>
+<kw name="Enter the Phone Number" library="Webresource">
+<arg>98756743</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${InputTextField}</arg>
+<arg>${phonenumber}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210823 10:51:37.482" level="INFO">Typing text '98756743' into text field '//android.widget.EditText[@text="Phone number"]'</msg>
+<status status="PASS" starttime="20210823 10:51:37.480" endtime="20210823 10:51:38.392"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:37.479" endtime="20210823 10:51:38.392"/>
+</kw>
+<kw name="Verify the Continue Button" library="Webresource">
+<kw name="Element Should Be Enabled" library="AppiumLibrary">
+<arg>${ContinueBtn}</arg>
+<doc>Verifies that element identified with locator is enabled.</doc>
+<msg timestamp="20210823 10:51:39.307" level="INFO">Element '//android.widget.Button' is enabled .</msg>
+<status status="PASS" starttime="20210823 10:51:38.393" endtime="20210823 10:51:39.307"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>Continue</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:39.361" level="INFO">'Continue'.</msg>
+<msg timestamp="20210823 10:51:39.412" level="INFO">Clicking element 'Continue'.</msg>
+<status status="PASS" starttime="20210823 10:51:39.307" endtime="20210823 10:51:39.467"/>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<msg timestamp="20210823 10:51:40.632" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenrecord-1.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="appium-screenrecord-1.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:39.467" endtime="20210823 10:51:40.633"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:38.393" endtime="20210823 10:51:40.633"/>
+</kw>
+<kw name="Close Test Application" library="Webresource" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210823 10:51:40.634" endtime="20210823 10:51:40.982"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:40.633" endtime="20210823 10:51:40.982"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210823 10:51:12.147" endtime="20210823 10:51:40.982"/>
+</test>
+<test id="s1-s2-t2" name="Simple Sanity Test">
+<kw name="Open Test Application" library="Webresource" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${ANDROID_AUTOMATION_HOST}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>app=/Users/mbhatiya/Desktop/RobotFramework/app.apk</arg>
+<arg>appPackage=${ANDROID_PACKAGE_NAME}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210823 10:51:40.984" endtime="20210823 10:51:48.374"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:40.983" endtime="20210823 10:51:48.374"/>
+</kw>
+<kw name="Navigate to the Onbaording Screen" library="Webresource">
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<status status="PASS" starttime="20210823 10:51:48.375" endtime="20210823 10:51:48.843"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>No, I want to open an account</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:48.995" level="INFO">'No, I want to open an account'.</msg>
+<msg timestamp="20210823 10:51:49.029" level="INFO">Clicking element 'No, I want to open an account'.</msg>
+<status status="PASS" starttime="20210823 10:51:48.844" endtime="20210823 10:51:49.107"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:48.374" endtime="20210823 10:51:49.107"/>
+</kw>
+<kw name="Verify the Eligibility Text" library="Webresource">
+<kw name="Element Text Should Be" library="AppiumLibrary">
+<arg>${Checkbox}</arg>
+<arg>Yes, all statements above are true</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<msg timestamp="20210823 10:51:49.111" level="INFO">Verifying element '//android.widget.CheckBox' contains exactly text 'Yes, all statements above are true'.</msg>
+<status status="PASS" starttime="20210823 10:51:49.107" endtime="20210823 10:51:50.217"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Checkbox}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210823 10:51:50.219" level="INFO">Clicking element '//android.widget.CheckBox'.</msg>
+<status status="PASS" starttime="20210823 10:51:50.217" endtime="20210823 10:51:50.372"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>Continue</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:51.008" level="INFO">'Continue'.</msg>
+<msg timestamp="20210823 10:51:51.036" level="INFO">Clicking element 'Continue'.</msg>
+<status status="PASS" starttime="20210823 10:51:50.372" endtime="20210823 10:51:51.085"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:49.107" endtime="20210823 10:51:51.085"/>
+</kw>
+<kw name="Verify the Information Icon Details" library="Webresource">
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>id=termsConditionsText</arg>
+<arg>Terms</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210823 10:51:51.088" level="INFO">Verifying element 'id=termsConditionsText' contains text 'Terms'.</msg>
+<status status="PASS" starttime="20210823 10:51:51.086" endtime="20210823 10:51:51.980"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>I agree</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:52.014" level="INFO">'I agree'.</msg>
+<msg timestamp="20210823 10:51:52.042" level="INFO">Clicking element 'I agree'.</msg>
+<status status="PASS" starttime="20210823 10:51:51.981" endtime="20210823 10:51:52.086"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:51.086" endtime="20210823 10:51:52.087"/>
+</kw>
+<kw name="Navigate to Phone Number Screen" library="Webresource">
+<kw name="Click Button" library="AppiumLibrary">
+<arg>Get started</arg>
+<doc>Click button</doc>
+<msg timestamp="20210823 10:51:52.994" level="INFO">'Get started'.</msg>
+<msg timestamp="20210823 10:51:53.016" level="INFO">Clicking element 'Get started'.</msg>
+<status status="PASS" starttime="20210823 10:51:52.087" endtime="20210823 10:51:53.068"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${InputTextField}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210823 10:51:53.068" endtime="20210823 10:51:55.662"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:52.087" endtime="20210823 10:51:55.662"/>
+</kw>
+<kw name="Enter the Phone Number" library="Webresource">
+<arg>1234567</arg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${InputTextField}</arg>
+<arg>${phonenumber}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210823 10:51:55.665" level="INFO">Typing text '1234567' into text field '//android.widget.EditText[@text="Phone number"]'</msg>
+<status status="PASS" starttime="20210823 10:51:55.663" endtime="20210823 10:51:56.831"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:55.662" endtime="20210823 10:51:56.832"/>
+</kw>
+<kw name="Verify the Continue Button" library="Webresource">
+<kw name="Element Should Be Enabled" library="AppiumLibrary">
+<arg>${ContinueBtn}</arg>
+<doc>Verifies that element identified with locator is enabled.</doc>
+<msg timestamp="20210823 10:51:57.767" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2088"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2088]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2088]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.LinearLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+              &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/appContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+                &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/appContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+                    &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/appContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+                      &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/appContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true"&gt;
+                          &lt;android.view.View index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.View" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/backgroundImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,1524]" displayed="true" /&gt;
+                          &lt;android.widget.LinearLayout index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.LinearLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/mobToolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,364]" displayed="true"&gt;
+                            &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" content-desc="Fill in your number" resource-id="com.mobiquity.kib.onboarding.devMob:id/toolbarLayout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,364]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,220]" displayed="true"&gt;
+                                &lt;android.widget.ImageButton index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.ImageButton" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][154,220]" displayed="true" /&gt;
+                                &lt;android.view.View index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[198,66][1080,220]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.FrameLayout&gt;
+                          &lt;/android.widget.LinearLayout&gt;
+                          &lt;android.widget.ScrollView index="2" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,364][1080,1351]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,364][1080,999]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/phoneNumberField" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][1036,634]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][1036,634]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/mobInputField" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][1036,634]" displayed="true"&gt;
+                                    &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][1036,634]" displayed="true"&gt;
+                                      &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/mob_edit_layout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][1036,538]" displayed="true"&gt;
+                                        &lt;android.widget.LinearLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.LinearLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/textFieldEditText" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][909,538]" displayed="true"&gt;
+                                          &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][909,538]" displayed="true"&gt;
+                                            &lt;android.widget.EditText index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.EditText" text="1234 567" resource-id="com.mobiquity.kib.onboarding.devMob:id/inputEditText" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[44,364][909,538]" displayed="true" /&gt;
+                                          &lt;/android.widget.FrameLayout&gt;
+                                        &lt;/android.widget.LinearLayout&gt;
+                                        &lt;android.widget.FrameLayout index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/clear_toggle" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[909,397][1019,507]" displayed="true"&gt;
+                                          &lt;android.widget.ImageView index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.ImageView" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[931,419][997,485]" displayed="true" /&gt;
+                                        &lt;/android.widget.FrameLayout&gt;
+                                      &lt;/android.view.ViewGroup&gt;
+                                      &lt;android.widget.LinearLayout index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.LinearLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/errorMessageLayout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,582][1036,634]" displayed="true"&gt;
+                                        &lt;android.widget.ImageView index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.ImageView" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/errorIcon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,582][83,632]" displayed="true" /&gt;
+                                        &lt;android.widget.TextView index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.TextView" text="This is an invalid phone number" resource-id="com.mobiquity.kib.onboarding.devMob:id/errorMessage" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[116,582][992,634]" displayed="true" /&gt;
+                                      &lt;/android.widget.LinearLayout&gt;
+                                    &lt;/android.view.ViewGroup&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                  &lt;android.view.ViewGroup index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/countryContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,364][286,540]" displayed="true"&gt;
+                                    &lt;android.widget.TextView index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.TextView" text="Country" resource-id="com.mobiquity.kib.onboarding.devMob:id/captionTextView" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[77,386][213,438]" displayed="true" /&gt;
+                                    &lt;android.widget.TextView index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.TextView" text="&amp;#127472;&amp;#127484; +965" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[77,447][254,510]" displayed="true" /&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                              &lt;android.view.ViewGroup index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/carrierInputField" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,678][1036,852]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,678][1036,852]" displayed="true"&gt;
+                                  &lt;android.view.ViewGroup index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.view.ViewGroup" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/mob_edit_layout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,678][1036,852]" displayed="true"&gt;
+                                    &lt;android.widget.LinearLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.LinearLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/textFieldEditText" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,678][1036,852]" displayed="true"&gt;
+                                      &lt;android.widget.FrameLayout index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,678][1036,852]" displayed="true"&gt;
+                                        &lt;android.widget.EditText index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.EditText" text="Select your operator" resource-id="com.mobiquity.kib.onboarding.devMob:id/inputEditText" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[44,678][1036,852]" displayed="true" /&gt;
+                                      &lt;/android.widget.FrameLayout&gt;
+                                    &lt;/android.widget.LinearLayout&gt;
+                                    &lt;android.widget.FrameLayout index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.FrameLayout" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/right_icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[904,711][1014,821]" displayed="true"&gt;
+                                      &lt;android.widget.ImageView index="0" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.ImageView" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[926,733][992,799]" displayed="true" /&gt;
+                                    &lt;/android.widget.FrameLayout&gt;
+                                  &lt;/android.view.ViewGroup&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                              &lt;android.widget.ImageView index="2" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.ImageView" text="" resource-id="com.mobiquity.kib.onboarding.devMob:id/warningImageView" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,896][110,962]" displayed="true" /&gt;
+                              &lt;android.widget.TextView index="3" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.TextView" text="Notify us if you switch mobile operator so that we can send you messages successfully." resource-id="com.mobiquity.kib.onboarding.devMob:id/changeOperatorWarningMessageTextView" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[132,896][1036,999]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/android.widget.ScrollView&gt;
+                          &lt;android.widget.Button index="3" package="com.mobiquity.kib.onboarding.devMob" class="android.widget.Button" text="Fill in your phone number first" resource-id="com.mobiquity.kib.onboarding.devMob:id/continueButton" checkable="false" checked="false" clickable="true" enabled="false" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[44,1351][1036,1480]" displayed="true" /&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.widget.FrameLayout&gt;
+                    &lt;/android.widget.FrameLayout&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.widget.FrameLayout&gt;
+              &lt;/android.widget.FrameLayout&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+    &lt;android.view.View index="1" package="com.mobiquity.kib.onboarding.devMob" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,66]" displayed="true" /&gt;
+    &lt;android.view.View index="2" package="com.mobiquity.kib.onboarding.devMob" class="android.view.View" text="" resource-id="android:id/navigationBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2088][1080,2220]" displayed="true" /&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210823 10:51:59.382" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 10:51:57.767" endtime="20210823 10:51:59.382"/>
+</kw>
+<msg timestamp="20210823 10:51:59.383" level="FAIL">Element '//android.widget.Button' should be enabled but did not</msg>
+<status status="FAIL" starttime="20210823 10:51:56.832" endtime="20210823 10:51:59.383"/>
+</kw>
+<kw name="Click Button" library="AppiumLibrary">
+<arg>Continue</arg>
+<doc>Click button</doc>
+<status status="NOT RUN" starttime="20210823 10:51:59.383" endtime="20210823 10:51:59.384"/>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<status status="NOT RUN" starttime="20210823 10:51:59.384" endtime="20210823 10:51:59.384"/>
+</kw>
+<status status="FAIL" starttime="20210823 10:51:56.832" endtime="20210823 10:51:59.384"/>
+</kw>
+<kw name="Close Test Application" library="Webresource" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210823 10:51:59.385" endtime="20210823 10:51:59.974"/>
+</kw>
+<status status="PASS" starttime="20210823 10:51:59.385" endtime="20210823 10:51:59.974"/>
+</kw>
+<tag>Sanity</tag>
+<status status="FAIL" starttime="20210823 10:51:40.983" endtime="20210823 10:51:59.974">Element '//android.widget.Button' should be enabled but did not</status>
+</test>
+<status status="FAIL" starttime="20210823 10:51:12.024" endtime="20210823 10:51:59.975"/>
+</suite>
+<status status="FAIL" starttime="20210823 10:51:09.771" endtime="20210823 10:51:59.976"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">API</stat>
+<stat pass="0" fail="1" skip="0">Sanity</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="GET Request">Testcases.GET Request</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s2" name="WebTest">Testcases.WebTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210823 10:51:10.166" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:10.402" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:10.476" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:10.556" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20210823 10:51:11.056" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:11.326" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:11.417" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210823 10:51:11.500" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
